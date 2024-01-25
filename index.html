@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote.css">
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs5.css">
+  </head>
+  <body>
+    <form method="post">
+	  <textarea id="summernote" name="editordata"></textarea>
+	</form>
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/plugins/summernote/summernote.js"></script>
+	<script src="assets/plugins/summernote/summernote-bs5.js"></script>
+	<!-- include summernote css/js -->
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	<script>
+	$(document).ready(function() {
+	  $('#summernote').summernote({
+	  disableDragAndDrop: true,
+			height: 300,
+			emptyPara: '',
+			codemirror: { // codemirror options
+				mode: 'text/html',
+				htmlMode: true,
+				lineNumbers: true,
+				theme: 'monokai'
+			},
+			fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '24', '30', '36', '48' , '64'],
+			toolbar: [
+				['style', ['style']],
+				['font', ['bold', 'underline', 'clear']],
+				['fontname', ['fontname']],
+				['fontsize', ['fontsize']],
+				['color', ['color']],
+				['para', ['ul', 'ol', 'paragraph']],
+				['table', ['table']],
+				['insert', ['link', 'image', 'video']],
+				['view', ['fullscreen', 'codeview', 'help']]
+			],
+			popover: {
+				image: [
+					['custom', ['imageAttributes']],
+					['resize', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+					['float', ['floatLeft', 'floatRight', 'floatNone']],
+					['remove', ['removeMedia']]
+				],
+				table: [
+					['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+					['delete', ['deleteRow', 'deleteCol', 'deleteTable']]
+				],
+			},
+	  });
+	});
+	</script>
+  </body>
+</html>
